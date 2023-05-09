@@ -1,4 +1,7 @@
-#include "main.h"
+#include "monty.h"
+
+
+
 
 /**
  * main - entry point for monty interpreter
@@ -17,7 +20,8 @@ int main(int ac, char **av)
 	size_t line_buf_size = 0;
 	unsigned int current_line_number = 0;
 	char *line_tokens[2];
-
+	int func_check;
+	
 	stack = NULL;
 	if (ac != 2)
 	{
@@ -40,6 +44,9 @@ int main(int ac, char **av)
 		line_tokens[0] = strtok(line_buf, " \n\t");
 		line_tokens[1] = strtok(NULL, " \n\t");
 		printf("[%u][0]: %s\t[%u][1]: %s\n", current_line_number, line_tokens[0], current_line_number, line_tokens[1]);
+
+		func_check = check_op_func(line_tokens[0], current_line_number);
+
 		free(line_buf);
 		line_buf = NULL;
 		line_size = getline(&line_buf, &line_buf_size, fp);
