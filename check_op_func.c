@@ -1,9 +1,8 @@
 #include "monty.h"
 
-int check_op_func(char *str, unsigned int line_no)
+stack_t *check_op_func(stack_t *stack, char *str, unsigned int line_no)
 {
 	int i;
-	stack_t **stack = NULL;
 
 	instruction_t op_array[] = {
 		{"push", _push},
@@ -15,16 +14,23 @@ int check_op_func(char *str, unsigned int line_no)
 		{"nop", _nop},
 		{NULL, NULL}
 	};
+
+	if (str == NULL)
+	{
+		printf("opcode string was NULL");
+		return (NULL);
+	}
 	i = 0;
 	while (op_array[i].opcode != NULL)
 	{
 		if (strcmp(op_array[i].opcode, str) == 0)
 		{
-			printf("string compare success");
-			op_array[i].f(stack, line_no);
-			return (0);
+			printf("string compare success\n");
+
+			op_array[i].f(&stack, line_no);
+			return (stack);
 		}
 		i = i + 1;
  	}
-	return (1);
+	return (NULL);
 }
