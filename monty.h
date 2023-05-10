@@ -1,12 +1,14 @@
-#ifndef _MAIN_H_
-#define _MAIN_H_
+#ifndef _MONTY_H_
+#define _MONTY_H_
 
 #include <stdlib.h>
 #include <stdio.h>
 #include <errno.h>
 #include <string.h>
 #include <unistd.h>
+#include <ctype.h>
 
+extern int g_push_arg;
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -48,5 +50,5 @@ void _swap(stack_t **stack, unsigned int line_number);
 void _add(stack_t **stack, unsigned int line_number);
 void _nop(stack_t **stack, unsigned int line_number);
 int check_op_func(char *str, unsigned int line_no);
-
+int is_num(char *str);
 #endif
