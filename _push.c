@@ -1,15 +1,19 @@
 #include "monty.h"
 
-//extern int g_push_arg;
+/**
+ *
+ *
+ *
+ *
+ */
 
 void _push(stack_t **stack, unsigned int line_no)
 {
-//	extern int g_push_arg;
-//	int i = 6;
 
-	printf("global var in _push func: %d\n", g_push_arg);
+//	printf("global var in _push func: %d\n", g_push_arg);
+	printf("memory address of stack head: [%p]\n", stack);
 
-	printf("we are in the push func\n");
+//	printf("we are in the push func\n");
 	stack_t *new_node;
 
 	if (stack == NULL)
@@ -36,12 +40,19 @@ void _push(stack_t **stack, unsigned int line_no)
 	}
 	*stack = new_node;
 	printf("line 36 flag\n");
-	printf("this the is new node [%d]",(*stack)->n);
-	while (*stack != NULL)
+	printf("this the is new node [%d]\n",(*stack)->n);
+//	while (*stack != NULL)
+//	{
+	printf("From node %d\n", (*stack)->n);
+	if ((*stack)->next != NULL)
 	{
-		printf("%d\n", (*stack)->n);
-		*stack = (*stack)->next;
+		printf("From node %d\n", (*stack)->next->n);
 	}
+
+
+//		*stack = (*stack)->next;
+//	}
 	printf("line 44 flag\n");
+	printf("memory address of stack head end: [%p]\n", stack);
 
 }
