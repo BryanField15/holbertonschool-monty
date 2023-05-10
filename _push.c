@@ -22,6 +22,7 @@ void _push(stack_t **stack, unsigned int line_no)
 	{
 		return;
 	}
+	printf("new node address %p", new_node);
 	printf("line 25 flag\n");
 	new_node->n = g_push_arg;
 	printf("line 27 flag\n");
