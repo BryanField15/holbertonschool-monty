@@ -5,17 +5,17 @@
 void _push(stack_t **stack, unsigned int line_no)
 {
 //	extern int g_push_arg;
-	int i = 6;
+//	int i = 6;
 
 	printf("global var in _push func: %d\n", g_push_arg);
 
 	printf("we are in the push func\n");
 	stack_t *new_node;
 
-/*	if (stack == NULL)
+	if (stack == NULL)
 	{
 		return;
-		}*/
+	}
 	printf("line 20 flag\n");
 	new_node = malloc(sizeof(new_node));
 	if (new_node == NULL)
@@ -23,7 +23,7 @@ void _push(stack_t **stack, unsigned int line_no)
 		return;
 	}
 	printf("line 25 flag\n");
-	new_node->n = i;
+	new_node->n = g_push_arg;
 	printf("line 27 flag\n");
 	new_node->next = *stack;
 	printf("line 29 flag\n");
@@ -41,6 +41,6 @@ void _push(stack_t **stack, unsigned int line_no)
 		printf("%d\n", (*stack)->n);
 		*stack = (*stack)->next;
 	}
-	printf("line 43 flag\n");
+	printf("line 44 flag\n");
 
 }

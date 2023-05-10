@@ -8,8 +8,8 @@
 #include <unistd.h>
 #include <ctype.h>
 
-extern int g_push_arg;
-
+int g_push_arg;
+void func(void);
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -49,6 +49,6 @@ void _pop(stack_t **stack, unsigned int line_number);
 void _swap(stack_t **stack, unsigned int line_number);
 void _add(stack_t **stack, unsigned int line_number);
 void _nop(stack_t **stack, unsigned int line_number);
-int check_op_func(char *str, unsigned int line_no);
+stack_t *check_op_func(stack_t *stack, char *str, unsigned int line_no);
 int is_num(char *str);
 #endif
