@@ -34,11 +34,6 @@ int main(int ac, char **av)
 	{
 		current_line_number = current_line_number + 1;
 		line_tokens[0] = strtok(line_buf, " \n\t");
-		if (line_token[0] == NULL)
-		{
-			fprintf(stderr, "L%u: usage: push integer\n", line_number);
-			exit(EXIT_FAILURE);
-		}
 		line_tokens[1] = strtok(NULL, " \n\t");
 		if (line_tokens[1] != NULL)
 		{
