@@ -60,8 +60,8 @@ int main(int ac, char **av)
 	line_size = getline(&line_buf, &line_buf_size, fp);
 	while (line_size >= 0)
 	{
-		parse_line(line_buf, &stack, current_line_number);
 		current_line_number = current_line_number + 1;
+		parse_line(line_buf, &stack, current_line_number);
 		free(line_buf);
 		line_buf = NULL;
 		line_size = getline(&line_buf, &line_buf_size, fp);
