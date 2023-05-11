@@ -6,11 +6,11 @@
  * @line_number: the current line number
  * Return: void
  */
-void _pop(stack_t **stack, unsigned int line_no)
+void _pop(stack_t **stack, unsigned int line_number)
 {
 	if (stack == NULL)
 	{
-		printf("L%u: can't pop an stack empty\n", line_no);
+		printf("L%u: can't pop an stack empty\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	if ((*stack)->next == NULL)
