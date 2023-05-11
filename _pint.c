@@ -1,5 +1,11 @@
 #include "monty.h"
 
+/**
+ * _pint - prints the first element of the stack
+ * @stack: the stack
+ * @line_number: the current line number
+ * Return: void
+ */
 void _pint(stack_t **stack, unsigned int line_no)
 {
 	if (stack == NULL)
