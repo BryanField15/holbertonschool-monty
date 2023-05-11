@@ -49,6 +49,6 @@ void _pop(stack_t **stack, unsigned int line_number);
 void _swap(stack_t **stack, unsigned int line_number);
 void _add(stack_t **stack, unsigned int line_number);
 void _nop(stack_t **stack, unsigned int line_number);
-void check_op_func(stack_t *stack, char *str, unsigned int line_number);
+void check_op_func(stack_t **stack, char *str, unsigned int line_number);
 int is_num(char *str);
 #endif

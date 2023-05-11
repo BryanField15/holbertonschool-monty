@@ -13,7 +13,7 @@
 
 int main(int ac, char **av)
 {
-	stack_t *stack;
+	stack_t **stack;
 	FILE *fp;
 	char *line_buf = NULL;
 	ssize_t line_size = 0;
