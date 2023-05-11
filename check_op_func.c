@@ -1,6 +1,6 @@
 #include "monty.h"
 
-void check_op_func(stack_t *stack, char *str, unsigned int line_number)
+void check_op_func(stack_t **stack, char *str, unsigned int line_number)
 {
 	int i;
 
@@ -27,7 +27,7 @@ void check_op_func(stack_t *stack, char *str, unsigned int line_number)
 		{
 			printf("string compare success\n");
 
-			op_array[i].f(&stack, line_number);
+			op_array[i].f(stack, line_number);
 			return;
 		}
 		i = i + 1;

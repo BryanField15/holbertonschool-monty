@@ -2,10 +2,21 @@
 
 void _pall(stack_t **stack, unsigned int line_no)
 {
-	while (stack != NULL)
+	stack_t *temp;
+
+	printf("pall function L5\tstack: [%p]\n",stack);
+
+	if (*stack == NULL)
 	{
-		printf("%d\n", (*stack)->n);
-		*stack = (*stack)->next;
+		return;
+	}
+	printf("pall function L13\t*stack: [%p]\n", *stack);
+	temp = *stack;
+
+	while (temp != NULL)
+	{
+		printf("%d\n", temp->n);
+		temp = temp->next;
 	}
 
 }
