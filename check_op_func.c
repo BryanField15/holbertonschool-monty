@@ -17,7 +17,6 @@ void check_op_func(stack_t **stack, char *str, unsigned int line_number)
 
 	if (str == NULL)
 	{
-		printf("opcode string was NULL");
 		return;
 	}
 	i = 0;
@@ -25,8 +24,6 @@ void check_op_func(stack_t **stack, char *str, unsigned int line_number)
 	{
 		if (strcmp(op_array[i].opcode, str) == 0)
 		{
-			printf("string compare success\n");
-
 			op_array[i].f(stack, line_number);
 			return;
 		}

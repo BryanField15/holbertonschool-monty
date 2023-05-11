@@ -17,6 +17,4 @@ void _add(stack_t **stack, unsigned int line_no)
 	(*stack) = (*stack)->next;
 	free ((*stack)->prev);
 	(*stack)->prev = NULL;
-	printf("we are in the add function \n");
-
 }

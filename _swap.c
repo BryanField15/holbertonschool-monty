@@ -19,6 +19,4 @@ void _swap(stack_t **stack, unsigned int line_no)
 	(*stack)->n = (*stack)->next->n;
 	(*stack)->next->n = temp_int;
 
-	printf("we are in the swap function \n");
-
 }
