@@ -43,7 +43,7 @@ int main(int ac, char **av)
 	char *line_buf = NULL;
 	ssize_t line_size = 0;
 	size_t line_buf_size = 0;
-	unsigned int current_line_number = 1;
+	unsigned int current_line_number = 0;
 
 	stack = NULL;
 	if (ac != 2)
