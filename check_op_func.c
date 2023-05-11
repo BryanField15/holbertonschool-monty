@@ -1,6 +1,6 @@
 #include "monty.h"
 
-stack_t *check_op_func(stack_t *stack, char *str, unsigned int line_no)
+void check_op_func(stack_t *stack, char *str, unsigned int line_number)
 {
 	int i;
 
@@ -18,7 +18,7 @@ stack_t *check_op_func(stack_t *stack, char *str, unsigned int line_no)
 	if (str == NULL)
 	{
 		printf("opcode string was NULL");
-		return (NULL);
+		return;
 	}
 	i = 0;
 	while (op_array[i].opcode != NULL)
@@ -27,10 +27,10 @@ stack_t *check_op_func(stack_t *stack, char *str, unsigned int line_no)
 		{
 			printf("string compare success\n");
 
-			op_array[i].f(&stack, line_no);
-			return (stack);
+			op_array[i].f(&stack, line_number);
+			return;
 		}
 		i = i + 1;
  	}
-	return (NULL);
+	return;
 }

@@ -7,7 +7,7 @@
  *
  */
 
-void _push(stack_t **stack, unsigned int line_no)
+void _push(stack_t **stack, unsigned int line_number)
 {
 
 //	printf("global var in _push func: %d\n", g_push_arg);

@@ -53,11 +53,12 @@ int main(int ac, char **av)
 			}
 			printf("[%u][0]: %s\t[%u][1]: %s\t global var: %d\n", current_line_number, line_tokens[0], current_line_number, line_tokens[1], g_push_arg);
 		}
-		stack = check_op_func(&stack, line_tokens[0], current_line_number);
+		check_op_func(stack, line_tokens[0], current_line_number);
 		free(line_buf);
 		line_buf = NULL;
 		line_size = getline(&line_buf, &line_buf_size, fp);
 	}
 	free(line_buf);
+	free(stack);
 	return (0);
 }

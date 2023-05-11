@@ -2,6 +2,10 @@
 
 void _pint(stack_t **stack, unsigned int line_no)
 {
-	printf("we are in the pint function \n");
-
+	if (stack == NULL)
+	{
+		printf("L%u: can't pint, stack empty\n", line_no);
+		exit (EXIT_FAILURE);
+	}
+	printf("%d\n", (*stack)->n);
 }
