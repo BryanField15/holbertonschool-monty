@@ -1,12 +1,11 @@
 #include "monty.h"
 
 /**
- *
- *
- *
- *
+ * _push - pushes data to top of stack
+ * @stack: the stack
+ * @line_number: the current line number
+ * Return: void
  */
-
 void _push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new_node;
@@ -20,7 +19,8 @@ void _push(stack_t **stack, unsigned int line_number)
 	new_node = malloc(sizeof(new_node));
 	if (new_node == NULL)
 	{
-		return;
+		fprintf(stderr, "Error: malloc failed\n");
+		exit(EXIT_FAILURE);
 	}
 	new_node->n = g_push_arg;
 	new_node->next = *stack;

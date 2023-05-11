@@ -1,5 +1,12 @@
 #include "monty.h"
 
+/**
+ * check_op_func - checks opcode against known functions
+ * @stack: the stack
+ * @line_number: the current line number
+ * @str: opcode string
+ * Return: void
+ */
 void check_op_func(stack_t **stack, char *str, unsigned int line_number)
 {
 	int i;
@@ -17,7 +24,8 @@ void check_op_func(stack_t **stack, char *str, unsigned int line_number)
 
 	if (str == NULL)
 	{
-		return;
+		fprintf(stderr, "L%u: usage: push integer\n", line_number);
+		exit(EXIT_FAILURE);
 	}
 	i = 0;
 	while (op_array[i].opcode != NULL)
@@ -28,7 +36,7 @@ void check_op_func(stack_t **stack, char *str, unsigned int line_number)
 			return;
 		}
 		i = i + 1;
- 	}
+	}
 	fprintf(stderr, "L%u: unknown instruction %s\n", line_number, str);
 	exit(EXIT_FAILURE);
 }

@@ -20,19 +20,25 @@ int main(int ac, char **av)
 	stack = NULL;
 	if (ac != 2)
 	{
-		printf("USAGE: monty file\n");
-		return (EXIT_FAILURE);
+		fprintf(stderr, "USAGE: monty file\n");
+		exit(EXIT_FAILURE);
 	}
 	fp = fopen(av[1], "r");
 	if (fp == NULL)
 	{
-		printf("Error: Can't open file %s\n", av[1]);
+		fprintf(stderr, "Error: Can't open file %s\n", av[1]);
+		exit(EXIT_FAILURE);
 	}
 	line_size = getline(&line_buf, &line_buf_size, fp);
 	while (line_size >= 0)
 	{
 		current_line_number = current_line_number + 1;
 		line_tokens[0] = strtok(line_buf, " \n\t");
+		if (line_token[0] == NULL)
+		{
+			fprintf(stderr, "L%u: usage: push integer\n", line_number);
+			exit(EXIT_FAILURE);
+		}
 		line_tokens[1] = strtok(NULL, " \n\t");
 		if (line_tokens[1] != NULL)
 		{
