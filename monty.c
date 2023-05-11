@@ -21,7 +21,7 @@ void parse_line(char *line_buf, stack_t **stack, unsigned int current_line_no)
 	line_tokens[1] = strtok(NULL, " \n\t");
 	if (line_tokens[1] != NULL)
 	{
-		if (is_num(line_tokens[1]) == 1)
+		if (is_num(line_tokens[1], current_line_no) == 1)
 		{
 			g_push_arg = atoi(line_tokens[1]);
 		}

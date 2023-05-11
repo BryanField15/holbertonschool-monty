@@ -6,7 +6,7 @@
  *
  *Return: 1 for number, 0 not number
  */
-int is_num(char *str)
+int is_num(char *str, unsigned int line_no)
 {
 	int i;
 
@@ -15,7 +15,8 @@ int is_num(char *str)
 	{
 		if (isdigit(str[i]) == 0)
 		{
-			return (0);
+			fprintf(stderr, "L%u: usage: push integer\n", line_no);
+			exit(EXIT_FAILURE);
 		}
 		i = i + 1;
 	}
