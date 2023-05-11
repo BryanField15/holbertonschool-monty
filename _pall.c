@@ -2,6 +2,7 @@
 
 void _pall(stack_t **stack, unsigned int line_no)
 {
+
 	stack_t *temp;
 
 	printf("pall function L5\tstack: [%p]\n",stack);
@@ -18,5 +19,4 @@ void _pall(stack_t **stack, unsigned int line_no)
 		printf("%d\n", temp->n);
 		temp = temp->next;
 	}
-
 }

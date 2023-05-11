@@ -10,12 +10,20 @@
 void _push(stack_t **stack, unsigned int line_number)
 {
 
+
 	printf("memory address of stack head: [%p]\n", stack);
 
+	printf("global var in _push func: %d\n", g_push_arg);
+	printf("memory address of stack head: [%p]\n", stack);
+
+	printf("we are in the push func\n");
 	stack_t *new_node;
 
 	if (stack == NULL)
 	{
+		printf("in push the stack is null\n");
+		fprintf(stderr, "L%u: usage: push integer\n", line_number);
+		exit(EXIT_FAILURE);
 		return;
 	}
 	new_node = malloc(sizeof(new_node));

@@ -32,5 +32,6 @@ void check_op_func(stack_t **stack, char *str, unsigned int line_number)
 		}
 		i = i + 1;
  	}
-	return;
+	fprintf(stderr, "L%u: unknown instruction %s\n", line_number, str);
+	exit(EXIT_FAILURE);
 }
