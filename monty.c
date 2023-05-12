@@ -58,6 +58,7 @@ int main(int ac, char **av)
 		exit(EXIT_FAILURE);
 	}
 	line_size = getline(&line_buf, &line_buf_size, fp);
+ 
 	while (line_size >= 0)
 	{
 		current_line_number = current_line_number + 1;
