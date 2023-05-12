@@ -8,7 +8,7 @@
  */
 void _pop(stack_t **stack, unsigned int line_number)
 {
-	if (stack == NULL)
+	if ((*stack) == NULL)
 	{
 		printf("L%u: can't pop an stack empty\n", line_number);
 		exit(EXIT_FAILURE);
